@@ -1,8 +1,8 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 0.3048;
 
-const pace: Definitions = {
+export const pace = utils( {
   metric: {
     baseUnit: 's/m',
     transform: val => val * RATIO,
@@ -44,6 +44,6 @@ const pace: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( pace );
+export default pace;

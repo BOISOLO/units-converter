@@ -1,8 +1,8 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 33.8140227;
 
-const volumeFlowRate: Definitions = {
+export const volumeFlowRate = utils( {
   metric: {
     baseUnit: 'l/s',
     transform: val => val * RATIO,
@@ -275,6 +275,6 @@ const volumeFlowRate: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( volumeFlowRate );
+export default volumeFlowRate;

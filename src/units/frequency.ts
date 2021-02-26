@@ -1,9 +1,9 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 1;
 const PI = 3.141592653589793;
 
-const frequency: Definitions = {
+export const frequency = utils( {
   metric: {
     baseUnit: 'Hz',
     transform: val => RATIO * val,
@@ -73,6 +73,6 @@ const frequency: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( frequency );
+export default frequency;

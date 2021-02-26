@@ -1,8 +1,8 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 10.7639;
 
-const area: Definitions = {
+export const area = utils( {
   metric: {
     baseUnit: 'm2',
     transform: val => val * RATIO,
@@ -86,6 +86,6 @@ const area: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( area );
+export default area;

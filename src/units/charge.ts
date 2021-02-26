@@ -1,8 +1,8 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 1;
 
-const charge: Definitions = {
+export const charge = utils( {
   metric: {
     baseUnit: 'c',
     transform: val => RATIO * val,
@@ -44,6 +44,6 @@ const charge: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( charge );
+export default charge;

@@ -1,8 +1,8 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 453.592;
 
-const mass: Definitions = {
+export const mass = utils( {
   metric: {
     baseUnit: 'g',
     transform: val => val * 1 / RATIO,
@@ -72,6 +72,6 @@ const mass: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( mass );
+export default mass;

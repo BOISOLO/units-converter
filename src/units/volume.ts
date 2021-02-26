@@ -1,8 +1,8 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 33.8140226;
 
-const volume: Definitions = {
+export const volume = utils( {
   metric: {
     baseUnit: 'l',
     transform: val => RATIO * val,
@@ -193,6 +193,6 @@ const volume: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( volume );
+export default volume;

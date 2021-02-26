@@ -1,7 +1,7 @@
 
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
-const apparentPower: Definitions = {
+export const apparentPower = utils( {
   metric: {
     baseUnit: 'VA',
     transform: val => val * 1,
@@ -43,6 +43,6 @@ const apparentPower: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( apparentPower );
+export default apparentPower;

@@ -1,8 +1,8 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 1;
 
-const energy: Definitions = {
+export const energy = utils( {
   metric: {
     baseUnit: 'J',
     transform: val => RATIO * val,
@@ -58,6 +58,6 @@ const energy: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( energy );
+export default energy;

@@ -1,8 +1,8 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 3.28084;
 
-const length: Definitions = {
+export const length = utils( {
   metric: {
     baseUnit: 'm',
     transform: val => { return val * RATIO; },
@@ -93,6 +93,6 @@ const length: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( length );
+export default length;

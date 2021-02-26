@@ -1,6 +1,6 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
-const temperature: Definitions = {
+export const temperature = utils( {
   metric: {
     baseUnit: 'C',
     transform: val => val / ( 5 / 9 ) + 32,
@@ -45,6 +45,6 @@ const temperature: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( temperature );
+export default temperature;

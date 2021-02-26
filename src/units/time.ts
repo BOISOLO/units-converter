@@ -1,9 +1,9 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 1;
 const daysInYear = 365.25;
 
-const time: Definitions = {
+export const time = utils( {
   metric: {
     baseUnit: 's',
     transform: val => val * RATIO,
@@ -80,6 +80,6 @@ const time: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( time );
+export default time;

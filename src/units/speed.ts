@@ -1,8 +1,8 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 1.609344;
 
-const speed: Definitions = {
+export const speed = utils( {
   metric: {
     baseUnit: 'N',
     transform: val => val * 1 / RATIO,
@@ -51,6 +51,6 @@ const speed: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( speed );
+export default speed;

@@ -1,8 +1,8 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 1;
 
-const power: Definitions = {
+export const power = utils( {
   metric: {
     baseUnit: 'W',
     transform: val => val * RATIO,

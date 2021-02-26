@@ -1,8 +1,8 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 8;
 
-const digitals: Definitions = {
+export const digital = utils( {
   bits: {
     baseUnit: 'b',
     transform: val => val * 1 / RATIO,
@@ -85,6 +85,6 @@ const digitals: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( digitals );
+export default digital;

@@ -1,9 +1,9 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 1;
 const PI = 3.141592653589793;
 
-const angle: Definitions = {
+export const angle = utils( {
   metric: {
     baseUnit: 'g-force',
     transform: val => val * RATIO,
@@ -45,6 +45,6 @@ const angle: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( angle );
+export default angle;

@@ -1,8 +1,8 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 0.000001;
 
-const partsPer: Definitions = {
+export const partsPer = utils( {
   metric: {
     baseUnit: 'ppm',
     transform: val => val * RATIO,
@@ -37,6 +37,6 @@ const partsPer: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( partsPer );
+export default partsPer;

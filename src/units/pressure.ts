@@ -1,8 +1,8 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 0.00014503768078;
 
-const pressure: Definitions = {
+export const pressure = utils( {
   metric: {
     baseUnit: 'kPa',
     transform: val => val * RATIO,
@@ -72,6 +72,6 @@ const pressure: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( pressure );
+export default pressure;

@@ -1,8 +1,8 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 10.76391;
 
-const illuminance: Definitions = {
+export const illuminance = utils( {
   metric: {
     baseUnit: 'lx',
     transform: val => val * 1 / RATIO,
@@ -30,6 +30,6 @@ const illuminance: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( illuminance );
+export default illuminance;

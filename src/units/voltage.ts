@@ -1,8 +1,8 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 1;
 
-const voltage: Definitions = {
+export const voltage = utils( {
   metric: {
     baseUnit: 'V',
     transform: val => val * RATIO,
@@ -30,6 +30,6 @@ const voltage: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( voltage );
+export default voltage;

@@ -1,8 +1,8 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 1;
 
-const reactiveEnergy: Definitions = {
+export const reactiveEnergy = utils( {
   metric: {
     baseUnit: 'VARh',
     transform: val => val * RATIO,
@@ -44,6 +44,6 @@ const reactiveEnergy: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( reactiveEnergy );
+export default reactiveEnergy;

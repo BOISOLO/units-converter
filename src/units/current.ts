@@ -1,8 +1,8 @@
-import utils, { Definitions } from '../utils.js';
+import utils from '../utils';
 
 const RATIO = 1;
 
-const current: Definitions = {
+export const current = utils( {
   metric: {
     baseUnit: 'a',
     transform: val => RATIO * val,
@@ -30,6 +30,6 @@ const current: Definitions = {
       }
     }
   }
-};
+} );
 
-export default utils( current );
+export default current;
