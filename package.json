@@ -4,7 +4,7 @@
   "description": "A simple utility library to measure and convert between units",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
-  "browser": "dist/umd/index.min.js",
+  "browser": "dist/umd/index.js",
   "keywords": [
     "units",
     "conversion",
@@ -20,22 +20,14 @@
     "url": "https://github.com/nosferatoy/units-converter"
   },
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "test": "jest --coverage && cat ./coverage/lcov.info | codacy-coverage",
-    "lint": "eslint '**/*.js' --fix",
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:umd": "npx webpack --config-name=\"umd\"",
+    "build": "npx webpack",
+    "dev": "tsc -p tsconfig.json",
+    "test": "jest --coverage",
+    "lint": "eslint '**/*.ts' --fix",
     "pretest": "agadoo"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
   },
   "author": {
     "name": "Georgios Papageorgiou",
@@ -44,23 +36,16 @@
   "license": "MIT",
   "type": "module",
   "devDependencies": {
-    "@babel/preset-env": "^7.4.5",
-    "agadoo": "^1.0.1",
-    "babel-jest": "^26.0.1",
-    "codacy-coverage": "^3.4.0",
-    "eslint": "^6.0.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.17.3",
-    "eslint-plugin-node": "^9.1.0",
-    "eslint-plugin-promise": "^4.1.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "husky": "^3.0.0",
-    "jest": "^26.0.1",
-    "lint-staged": "^9.2.0",
-    "rollup": "^1.0.0",
-    "rollup-plugin-terser": "^5.3.0"
-  },
-  "files": [
-    "dist"
-  ]
+    "@typescript-eslint/eslint-plugin": "^4.15.2",
+    "@typescript-eslint/parser": "^4.15.2",
+    "agadoo": "^2.0.0",
+    "eslint": "^7",
+    "jest": "^26.6.3",
+    "terser-webpack-plugin": "^5.1.1",
+    "ts-loader": "^8.0.17",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.2",
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0"
+  }
 }
