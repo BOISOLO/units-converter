@@ -1,5 +1,4 @@
-import { join, basename, dirname, resolve } from 'path';
-import glob from 'glob';
+import { join } from 'path';
 import TerserPlugin from 'terser-webpack-plugin';
 
 export default [
@@ -48,19 +47,31 @@ export default [
   //   entry: {//entryPlus( entryFiles ),
   //     utils: {
   //       import: './src/utils.ts',
+  //       library: {
+  //         type: 'module',
+  //         name: 'utils',
+  //       },
   //     },
   //     acceleration: {
   //       import: './src/units/acceleration.ts',
   //       dependOn: 'utils',
-  //       filename: 'units/[name].js'
+  //       filename: 'units/[name].js',
+  //       library: {
+  //         type: 'module',
+  //         name: 'acceleration',
+  //       },
   //     },
   //   },
   //   output: {
   //     path: join( process.cwd(), 'dist/es' ),
-  //     library: '[name]',
-  //     libraryTarget: 'var',
+  //     // library: '[name]',
+  //     libraryTarget: 'module',
+  //     module: true
   //   },
-  //   target: 'web',
+  //   experiments: {
+  //     outputModule: true
+  //   },
+  //   target: [ 'web', 'es2015' ],
   //   mode: 'development',
   //   resolve: {
   //     extensions: [ '.ts', '.js', '.mjs' ],
@@ -68,9 +79,6 @@ export default [
   //   optimization: {
   //     usedExports: true
   //   },
-  //   plugins: [
-  //     new EsmWebpackPlugin()
-  //   ],
   //   module: {
   //     rules: [
   //       {
