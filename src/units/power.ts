@@ -44,5 +44,6 @@ export const power = utils( {
       }
     }
   }
-};
-export default utils( power );
+} );
+
+export default power;

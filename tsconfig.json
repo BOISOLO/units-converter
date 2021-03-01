@@ -14,8 +14,7 @@
       "ESNext"
     ]
   },
-  "compileOnSave": true,
   "include": [
-    "src/index.ts",
+    "src/**/*.ts",
   ]
 }
