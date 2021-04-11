@@ -277,4 +277,9 @@ describe('Test the possibilities', () => {
     const expected = ['g-force', 'm/s2']
     expect(converter.acceleration().possibilities()).toEqual(expected)
   })
+
+  test('production possibilities', () => {
+    const expected = ['un', 'sec/un', 'min/un', 'hour/un', 'un/sec', 'un/min', 'un/hour']
+    expect(converter.production().possibilities()).toEqual(expected)
+  })
 })

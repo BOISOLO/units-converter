@@ -177,6 +177,14 @@ export default [
     external: [utils]
   },
   {
+    input: 'src/units/production.js',
+    output: [
+      { name: 'production', file: 'dist/es/units/production.js', format: 'es' },
+      { name: 'production', file: 'dist/cjs/units/production.js', format: 'cjs' }
+    ],
+    external: [utils]
+  },
+  {
     input: 'src/units/reactiveEnergy.js',
     output: [
       { name: 'reactiveEnergy', file: 'dist/es/units/reactiveEnergy.js', format: 'es' },
@@ -213,6 +221,14 @@ export default [
     output: [
       { name: 'time', file: 'dist/es/units/time.js', format: 'es' },
       { name: 'time', file: 'dist/cjs/units/time.js', format: 'cjs' }
+    ],
+    external: [utils]
+  },
+  {
+    input: 'src/units/traceAndTracking.js',
+    output: [
+      { name: 'traceAndTracking', file: 'dist/es/units/traceAndTracking.js', format: 'es' },
+      { name: 'traceAndTracking', file: 'dist/cjs/units/traceAndTracking.js', format: 'cjs' }
     ],
     external: [utils]
   },
