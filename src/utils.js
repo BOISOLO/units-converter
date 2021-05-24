@@ -1,8 +1,13 @@
 'use strict'
+const languageStrings = {
+  en: require('./lang/en.json'),
+  es: require('./lang/es.json')
+}
 
-const Converter = function (numerator, definitions) {
+const Converter = function (numerator, definitions, lang) {
   this.definitions = definitions
   this.val = numerator
+  this.lang = lang || 'en'
 }
 
 Converter.prototype.from = function (from) {
@@ -100,8 +105,8 @@ Converter.prototype.describe = function (abbr) {
   return {
     unit: unit.abbr,
     system: unit.system,
-    singular: unit.unit.name.singular,
-    plural: unit.unit.name.plural
+    singular: languageStrings[this.lang][unit.unit.name.singular],
+    plural: languageStrings[this.lang][unit.unit.name.plural]
   }
 }
 
@@ -113,7 +118,7 @@ Converter.prototype.possibilities = function () {
 }
 
 export default function converter (definitions) {
-  return (val) => {
-    return new Converter(val, definitions)
+  return (val, lang) => {
+    return new Converter(val, definitions, lang)
   }
 }
