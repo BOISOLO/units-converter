@@ -24,6 +24,7 @@
     "build:esm": "tsc -p tsconfig.esm.json",
     "build:umd": "npx webpack --config-name=\"umd\"",
     "build": "npm run-script build:cjs && npm run-script build:umd && npm run-script build:esm",
+    "prepare": "npm run-script build",
     "dev": "tsc -p tsconfig.json",
     "test": "jest --coverage",
     "lint": "eslint '**/*.ts' --fix",
