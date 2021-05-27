@@ -50,13 +50,12 @@ interface languageMap {
   [langKey: string]: translateMap;
 }
 
-
 const languageStrings: languageMap = {
   en: require('./lang/en.json'),
   es: require('./lang/es.json')
 }
 
-class Converter {
+export class Converter {
   private origin: UnitTransformationDef | undefined;
   private destination: UnitTransformationDef | undefined;
 
@@ -117,7 +116,7 @@ class Converter {
     );
   }
 
-  public toBest( options: Partial<UnitFinderOptions> ) {
+  public toBest( options: Partial<UnitFinderOptions> ): Value | undefined {
     if ( !this.origin ) {
       throw new Error( '.toBest must be called after .from' );
     }
@@ -167,7 +166,7 @@ class Converter {
     return found.length ? found[ 0 ] : undefined;
   }
 
-  public list() {
+  public list() : Array<Described> {
     return this.possibilities().map( abbr => this.describe( abbr ) );
   }
 
@@ -200,7 +199,7 @@ class Converter {
 }
 
 export function converter( definitions: Definitions ) {
-  return ( val: number, lang: string ) => {
+  return ( val: number, lang: string ) : Converter => {
     return new Converter( val, definitions, lang );
   };
 }

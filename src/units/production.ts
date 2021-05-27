@@ -3,7 +3,7 @@ import utils from '../utils'
 export const production = utils({
   metric: {
     baseUnit: 'un',
-    transform: val => 1,
+    transform: val => val,
     units: {
       un: {
         name: {

@@ -3,7 +3,7 @@ import utils from '../utils'
 export const traceAndTracking = utils({
   metric: {
     baseUnit: 'code',
-    transform: val => 1,
+    transform: val => val,
     units: {
       code: {
         name: {
