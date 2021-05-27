@@ -1,3 +1,6 @@
+import langEs from './lang/es';
+import langEn from './lang/en';
+
 type UnitDefSytem = 'metric' | string;
 
 interface Unit {
@@ -51,8 +54,8 @@ interface languageMap {
 }
 
 const languageStrings: languageMap = {
-  en: require('./lang/en.json'),
-  es: require('./lang/es.json')
+  en: langEn,
+  es: langEs
 }
 
 export class Converter {
