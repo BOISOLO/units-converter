@@ -1,5 +1,4 @@
 import langEs from './lang/es';
-import langEn from './lang/en';
 
 type UnitDefSytem = 'metric' | string;
 
@@ -54,15 +53,18 @@ interface languageMap {
 }
 
 const languageStrings: languageMap = {
-  en: langEn,
   es: langEs
 }
 
 export class Converter {
+  const DEFAULT_LANGUAGE = 'en';
+
   private origin: UnitTransformationDef | undefined;
   private destination: UnitTransformationDef | undefined;
 
-  constructor( private val: number, private definitions: Definitions, private lang: string = 'en' ) { }
+  constructor( private val: number, private definitions: Definitions, private lang: string) {
+    this.lang = this.lang || this.DEFAULT_LANGUAGE;
+  }
 
   public from( from: string ): this {
     if ( this.destination ) { throw new Error( '.from must be called before .to' ); }
@@ -174,6 +176,9 @@ export class Converter {
   }
 
   public describe( abbr: string ): Described {
+    let singular: string;
+    let plural: string;
+
     if ( !abbr || typeof abbr !== 'string' ) {
       throw new Error( 'You must select a unit' );
     }
@@ -184,11 +189,19 @@ export class Converter {
       throw new Error( `Unit "${abbr}" not found` );
     }
 
+    if (this.lang == this.DEFAULT_LANGUAGE) {
+      singular = unit.unit.name.singular;
+      plural = unit.unit.name.plural;
+    } else {
+      singular = languageStrings[this.lang][unit.unit.name.singular];
+      plural = languageStrings[this.lang][unit.unit.name.plural];
+    }
+
     return {
       unit: unit.abbr,
       system: unit.system,
-      singular: languageStrings[this.lang][unit.unit.name.singular],
-      plural: languageStrings[this.lang][unit.unit.name.plural],
+      singular: singular,
+      plural: plural,
     };
   }
 
