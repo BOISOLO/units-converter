@@ -57,7 +57,7 @@ const languageStrings: languageMap = {
 }
 
 export class Converter {
-  const DEFAULT_LANGUAGE = 'en';
+  private DEFAULT_LANGUAGE: string = 'en';
 
   private origin: UnitTransformationDef | undefined;
   private destination: UnitTransformationDef | undefined;
