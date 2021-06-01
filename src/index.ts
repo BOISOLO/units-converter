@@ -1,28 +1,59 @@
-export { acceleration } from './units/acceleration'
-export { angle } from './units/angle'
-export { apparentPower } from './units/apparentPower'
-export { area } from './units/area'
-export { charge } from './units/charge'
-export { current } from './units/current'
-export { digital } from './units/digital'
-export { each } from './units/each'
-export { energy } from './units/energy'
-export { force } from './units/force'
-export { frequency } from './units/frequency'
-export { illuminance } from './units/illuminance'
-export { length } from './units/length'
-export { mass } from './units/mass'
-export { pace } from './units/pace'
-export { partsPer } from './units/partsPer'
-export { power } from './units/power'
-export { pressure } from './units/pressure'
-export { reactiveEnergy } from './units/reactiveEnergy'
-export { reactivePower } from './units/reactivePower'
-export { speed } from './units/speed'
-export { temperature } from './units/temperature'
-export { time } from './units/time'
-export { voltage } from './units/voltage'
-export { volume } from './units/volume'
-export { volumeFlowRate } from './units/volumeFlowRate'
-export { production } from './units/production'
-export { traceAndTracking } from './units/traceAndTracking'
+import { acceleration } from './units/acceleration'
+import { angle } from './units/angle'
+import { apparentPower } from './units/apparentPower'
+import { area } from './units/area'
+import { charge } from './units/charge'
+import { current } from './units/current'
+import { digital } from './units/digital'
+import { each } from './units/each'
+import { energy } from './units/energy'
+import { force } from './units/force'
+import { frequency } from './units/frequency'
+import { illuminance } from './units/illuminance'
+import { length } from './units/length'
+import { mass } from './units/mass'
+import { pace } from './units/pace'
+import { partsPer } from './units/partsPer'
+import { power } from './units/power'
+import { pressure } from './units/pressure'
+import { reactiveEnergy } from './units/reactiveEnergy'
+import { reactivePower } from './units/reactivePower'
+import { speed } from './units/speed'
+import { temperature } from './units/temperature'
+import { time } from './units/time'
+import { voltage } from './units/voltage'
+import { volume } from './units/volume'
+import { volumeFlowRate } from './units/volumeFlowRate'
+import { production } from './units/production'
+import { traceAndTracking } from './units/traceAndTracking'
+
+export const Magnitudes: any[] = [
+    acceleration,
+    angle,
+    apparentPower,
+    area,
+    charge,
+    current,
+    digital,
+    each,
+    energy,
+    force,
+    frequency,
+    illuminance,
+    length,
+    mass,
+    pace,
+    partsPer,
+    power,
+    pressure,
+    reactiveEnergy,
+    reactivePower,
+    speed,
+    temperature,
+    time,
+    voltage,
+    volume,
+    volumeFlowRate,
+    production,
+    traceAndTracking,
+];
