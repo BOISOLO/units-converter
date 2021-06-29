@@ -1,1 +1,1 @@
-export declare const Magnitudes: any[];
+export declare const Magnitudes: any;

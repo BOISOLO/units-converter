@@ -27,7 +27,7 @@ import { volumeFlowRate } from './units/volumeFlowRate'
 import { production } from './units/production'
 import { traceAndTracking } from './units/traceAndTracking'
 
-export const Magnitudes: any[] = [
+export const Magnitudes: any = {
     acceleration,
     angle,
     apparentPower,
@@ -56,4 +56,4 @@ export const Magnitudes: any[] = [
     volumeFlowRate,
     production,
     traceAndTracking,
-];
+};
